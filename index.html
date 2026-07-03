@@ -44,7 +44,10 @@
 
     <!-- ===== ГЕРОЙ ===== -->
     <section class="hero" aria-labelledby="hero-heading">
-      <img class="hero-art" src="assets/hero.webp" alt="" aria-hidden="true" />
+      <picture>
+        <source media="(max-width: 720px)" srcset="assets/hero-mob.webp" />
+        <img class="hero-art" src="assets/hero.webp" alt="" aria-hidden="true" />
+      </picture>
       <div class="container">
         <div class="hero-badge" aria-hidden="true">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -174,7 +177,7 @@
         </h2>
 
         <div class="prognosis-grid reveal" role="list">
-          <article class="prognosis-card light" role="listitem">
+          <article class="prognosis-card light" role="listitem" style="background-image:url(assets/symp06.webp)">
             <div class="severity-badge">Лёгкий инсульт</div>
             <h3>Высокий потенциал восстановления</h3>
             <div class="prognosis-features">
@@ -185,7 +188,7 @@
             <div class="rehab-duration">Срок реабилитации: <strong>от 1 до 4 недель</strong></div>
           </article>
 
-          <article class="prognosis-card medium" role="listitem">
+          <article class="prognosis-card medium" role="listitem" style="background-image:url(assets/symp05.webp)">
             <div class="severity-badge">Средне-тяжёлый</div>
             <h3>Специализированное обучение</h3>
             <div class="prognosis-features">
@@ -196,7 +199,7 @@
             <div class="rehab-duration">Срок реабилитации: <strong>от 1 до 3 месяцев</strong></div>
           </article>
 
-          <article class="prognosis-card heavy" role="listitem">
+          <article class="prognosis-card heavy" role="listitem" style="background-image:url(assets/symp04.webp)">
             <div class="severity-badge">Тяжёлый инсульт</div>
             <h3>Интенсивное сопровождение</h3>
             <div class="prognosis-features">
@@ -323,6 +326,7 @@
     <section class="cta-section" aria-labelledby="cta-heading">
       <div class="container">
         <div class="cta-card reveal">
+          <img class="cta-wave" src="assets/wave.svg" alt="" aria-hidden="true" />
           <h2 id="cta-heading">Не теряйте время — позвоните сейчас</h2>
           <p class="cta-sub">
             Врач-реабилитолог Тимофеев Николай Устинович проведёт консультацию и составит индивидуальный план
@@ -336,7 +340,7 @@
           </div>
         </div>
       </div>
-      <img class="cta-bottom-art" src="assets/hero.webp" alt="" aria-hidden="true" />
+      <img class="cta-bottom-art" src="assets/bottom.webp" alt="" aria-hidden="true" />
     </section>
 
   </main>
