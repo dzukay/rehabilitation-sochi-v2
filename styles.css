@@ -171,8 +171,7 @@ section { padding: 80px 0; }
 
 /* ---------- Таймлайн сроков ---------- */
 .timeline-list { list-style: none; display: grid; gap: 16px; max-width: 760px; }
-.timeline-item { border-radius: var(--r-card); padding: 30px; transition: transform .3s, box-shadow .3s; }
-.timeline-item:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -18px rgba(32, 32, 32, .25); }
+.timeline-item { border-radius: var(--r-card); padding: 30px; }
 .timeline-item.green { background: linear-gradient(155deg, #f3f7ee, #d3e6c8); }
 .timeline-item.amber { background: linear-gradient(155deg, #faf3e8, #f0dcbb); }
 .timeline-item.red   { background: linear-gradient(155deg, #faeff0, #f0ccd4); }
@@ -189,9 +188,7 @@ section { padding: 80px 0; }
   background-size: cover; background-position: center;
   min-height: 420px;
   display: flex; flex-direction: column;
-  transition: transform .3s, box-shadow .3s;
 }
-.prognosis-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -18px rgba(32, 32, 32, .25); }
 .prognosis-card.light  { background: linear-gradient(155deg, #f3f7ee, #d3e6c8); }
 .prognosis-card.medium { background: linear-gradient(155deg, #faf3e8, #f0dcbb); }
 .prognosis-card.heavy  { background: linear-gradient(155deg, #faeff0, #f0ccd4); }
@@ -202,8 +199,6 @@ section { padding: 80px 0; }
 }
 .prognosis-card h3 { font-size: 1.5rem; margin-bottom: 18px; }
 .prognosis-features { display: grid; gap: 12px; font-size: .95rem; flex: 1; align-content: start; }
-.prognosis-feature { padding-left: 26px; position: relative; }
-.prognosis-feature::before { content: '✓'; position: absolute; left: 0; top: 0; font-size: .9rem; }
 .rehab-duration { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(32, 32, 32, .1); font-size: .92rem; }
 
 /* ---------- Осложнения ---------- */
@@ -215,9 +210,7 @@ section { padding: 80px 0; }
 .complications-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .complication-card {
   background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow-soft); padding: 30px;
-  transition: transform .3s, box-shadow .3s;
 }
-.complication-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px -18px rgba(32, 32, 32, .18); }
 .complication-card.aphasia { grid-column: 1 / -1; }
 .comp-type-label { font-size: .8rem; color: var(--muted); }
 .complication-card h3 { font-size: 1.35rem; margin: 4px 0 18px; }
