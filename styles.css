@@ -171,7 +171,7 @@ section { padding: 80px 0; }
 
 /* ---------- Таймлайн сроков ---------- */
 .timeline-list { list-style: none; display: grid; gap: 16px; max-width: 760px; }
-.timeline-item { border-radius: var(--r-card); padding: 30px; }
+.timeline-item { border-radius: var(--r-card); padding: 30px; display: flex; flex-direction: column; }
 .timeline-item.green { background: #ecf3e3; }
 .timeline-item.amber { background: #f8eedf; }
 .timeline-item.red   { background: #f9e7ed; }
@@ -179,6 +179,9 @@ section { padding: 80px 0; }
 .timeline-item h3 { font-size: 1.45rem; margin-bottom: 10px; }
 .timeline-item p { font-size: .95rem; }
 .timing-intro { max-width: 640px; margin: -34px 0 48px; color: var(--muted); }
+
+/* кривая-спарклайн внизу карточки (как в блог-карточках ДС) */
+.card-curve { width: 144px; height: auto; margin-top: auto; padding-top: 28px; }
 
 /* ---------- Прогнозы ---------- */
 .prognosis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
