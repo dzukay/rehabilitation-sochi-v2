@@ -172,9 +172,9 @@ section { padding: 80px 0; }
 /* ---------- Таймлайн сроков ---------- */
 .timeline-list { list-style: none; display: grid; gap: 16px; max-width: 760px; }
 .timeline-item { border-radius: var(--r-card); padding: 30px; }
-.timeline-item.green { background: linear-gradient(155deg, #f3f7ee, #d3e6c8); }
-.timeline-item.amber { background: linear-gradient(155deg, #faf3e8, #f0dcbb); }
-.timeline-item.red   { background: linear-gradient(155deg, #faeff0, #f0ccd4); }
+.timeline-item.green { background: #ecf3e3; }
+.timeline-item.amber { background: #f8eedf; }
+.timeline-item.red   { background: #f9e7ed; }
 .timeline-phase { font-size: .85rem; color: var(--muted); margin-bottom: 8px; }
 .timeline-item h3 { font-size: 1.45rem; margin-bottom: 10px; }
 .timeline-item p { font-size: .95rem; }
@@ -185,21 +185,16 @@ section { padding: 80px 0; }
 .prognosis-card {
   border-radius: var(--r-card); padding: 30px;
   background: var(--card);
-  background-size: cover; background-position: center;
-  min-height: 420px;
+  min-height: 360px;
   display: flex; flex-direction: column;
 }
-.prognosis-card.light  { background: linear-gradient(155deg, #f3f7ee, #d3e6c8); }
-.prognosis-card.medium { background: linear-gradient(155deg, #faf3e8, #f0dcbb); }
-.prognosis-card.heavy  { background: linear-gradient(155deg, #faeff0, #f0ccd4); }
-.severity-badge {
-  align-self: flex-start; font-size: .8rem;
-  background: rgba(255, 255, 255, .7); border-radius: 999px;
-  padding: 6px 14px; margin-bottom: 18px;
-}
+.prognosis-card.light  { background: #ecf3e3; }
+.prognosis-card.medium { background: var(--card); }
+.prognosis-card.heavy  { background: #f9e7ed; }
+.severity-badge { font-size: .875rem; color: var(--muted); margin-bottom: 14px; }
 .prognosis-card h3 { font-size: 1.5rem; margin-bottom: 18px; }
 .prognosis-features { display: grid; gap: 12px; font-size: .95rem; flex: 1; align-content: start; }
-.rehab-duration { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(32, 32, 32, .1); font-size: .92rem; }
+.rehab-duration { margin-top: 28px; font-size: .92rem; }
 
 /* ---------- Осложнения ---------- */
 .complications-intro {
