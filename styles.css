@@ -20,6 +20,13 @@
   --r-card: 20px;
   --r-wrap: 30px;
   --r-btn: 8px;
+  --surface: #fff;
+  --coral: #F0876A;
+  --pink: #D96A8B;
+  --icon-muted: #7c7c7c;
+  --wash-green: #ecf3e3;
+  --wash-amber: #f8eedf;
+  --wash-rose: #f9e7ed;
   --font: 'Inter Tight', -apple-system, 'Segoe UI', sans-serif;
 }
 
@@ -50,12 +57,12 @@ section { padding: 80px 0; }
   border-radius: var(--r-btn); padding: 12px 20px;
   font-size: 1rem; font-family: var(--font);
   border: none; cursor: pointer;
-  transition: all .3s;
+  transition: background-color .3s, color .3s, border-color .3s;
 }
-.btn-dark { background: var(--ink); color: #fff; }
+.btn-dark { background: var(--ink); color: var(--surface); }
 .btn-dark:hover { background: var(--accent); }
-.btn-light { background: #fff; color: var(--ink); }
-.btn-light:hover { background: var(--ink); color: #fff; }
+.btn-light { background: var(--surface); color: var(--ink); }
+.btn-light:hover { background: var(--ink); color: var(--surface); }
 
 /* ---------- Стекло и карточки ---------- */
 .glass {
@@ -72,14 +79,6 @@ section { padding: 80px 0; }
 .soft-section { background: transparent; }
 .note-muted { font-size: .9rem; color: var(--muted); text-align: center; margin-top: 32px; }
 
-/* ---------- Появление при скролле ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.visible { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-  html { scroll-behavior: auto; }
-}
-
 /* ---------- Шапка (sticky, стекло) ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
@@ -89,13 +88,13 @@ section { padding: 80px 0; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
-.header-name { font-size: 1.05rem; }
-.header-name span { display: block; font-size: .8rem; color: var(--muted); }
+.header-name { font-size: 1.05rem; color: var(--accent); }
+.header-name span { display: block; font-size: .8rem; color: var(--muted); font-weight: 400; }
 .header-phone {
-  background: var(--ink); color: #fff;
+  background: var(--ink); color: var(--surface);
   border-radius: var(--r-btn); padding: 9px 18px; font-size: .95rem;
   display: inline-flex; align-items: center; gap: 8px;
-  transition: all .3s;
+  transition: background-color .3s, color .3s, border-color .3s;
 }
 .header-phone:hover { background: var(--accent); }
 
@@ -110,7 +109,7 @@ section { padding: 80px 0; }
     radial-gradient(1200px 760px at 8% -12%, rgba(240, 135, 106, .42), transparent 62%),
     radial-gradient(1100px 700px at 92% -14%, rgba(217, 106, 139, .36), transparent 62%),
     radial-gradient(950px 620px at 45% -16%, rgba(246, 178, 138, .38), transparent 65%),
-    #fafafa;
+    var(--paper-soft);
 }
 .hero-art {
   position: absolute; inset: 0;
@@ -138,8 +137,8 @@ section { padding: 80px 0; }
 }
 .doctor-avatar {
   width: 52px; height: 52px; border-radius: 50%;
-  background: linear-gradient(135deg, #F0876A, #D96A8B);
-  color: #fff; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--coral), var(--pink));
+  color: var(--surface); display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem; flex: none;
 }
 .doctor-name { font-size: 1.1rem; }
@@ -147,12 +146,13 @@ section { padding: 80px 0; }
 .hero-phones { display: flex; gap: 14px; flex-wrap: wrap; }
 .hero-phone-link {
   display: flex; align-items: center; gap: 12px;
-  background: var(--ink); color: #fff;
+  background: var(--ink); color: var(--surface);
   border-radius: var(--r-card); padding: 16px 22px; font-size: 1.15rem;
-  transition: all .3s;
+  transition: background-color .3s, color .3s, border-color .3s;
 }
 .hero-phone-link:hover { background: var(--accent); }
 .hero-phone-link .hero-phone-label { display: block; font-size: .78rem; opacity: .65; }
+.hero-urgency .urgency-icon { vertical-align: -2px; margin-right: 4px; }
 .hero-urgency {
   margin-top: 28px;
   background: var(--glass-card);
@@ -172,9 +172,9 @@ section { padding: 80px 0; }
 /* ---------- Таймлайн сроков ---------- */
 .timeline-list { list-style: none; display: grid; gap: 16px; max-width: 760px; }
 .timeline-item { border-radius: var(--r-card); padding: 30px; display: flex; flex-direction: column; }
-.timeline-item.green { background: #ecf3e3; }
-.timeline-item.amber { background: #f8eedf; }
-.timeline-item.red   { background: #f9e7ed; }
+.timeline-item.green { background: var(--wash-green); }
+.timeline-item.amber { background: var(--wash-amber); }
+.timeline-item.red   { background: var(--wash-rose); }
 .timeline-phase { font-size: .85rem; color: var(--muted); margin-bottom: 8px; }
 .timeline-item h3 { font-size: 1.45rem; margin-bottom: 10px; }
 .timeline-item p { font-size: .95rem; }
@@ -191,9 +191,9 @@ section { padding: 80px 0; }
   min-height: 360px;
   display: flex; flex-direction: column;
 }
-.prognosis-card.light  { background: #ecf3e3; }
+.prognosis-card.light  { background: var(--wash-green); }
 .prognosis-card.medium { background: var(--card); }
-.prognosis-card.heavy  { background: #f9e7ed; }
+.prognosis-card.heavy  { background: var(--wash-rose); }
 .severity-badge { font-size: .875rem; color: var(--muted); margin-bottom: 14px; }
 .prognosis-card h3 { font-size: 1.5rem; margin-bottom: 18px; }
 .prognosis-features { display: grid; gap: 12px; font-size: .95rem; flex: 1; align-content: start; }
@@ -207,7 +207,7 @@ section { padding: 80px 0; }
 }
 .complications-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .complication-card {
-  background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow-soft); padding: 30px;
+  background: var(--surface); border-radius: var(--r-card); box-shadow: var(--shadow-soft); padding: 30px;
 }
 .complication-card.aphasia { grid-column: 1 / -1; }
 .comp-type-label { font-size: .8rem; color: var(--muted); }
@@ -249,7 +249,7 @@ section { padding: 80px 0; }
 /* ---------- Футер-карточка ---------- */
 .site-footer { padding: 0 30px 30px; }
 .footer-card {
-  background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow-soft);
+  background: var(--surface); border-radius: var(--r-card); box-shadow: var(--shadow-soft);
   padding: 40px 30px;
   display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
 }
@@ -259,7 +259,7 @@ section { padding: 80px 0; }
 .floating-call { position: fixed; right: 20px; bottom: 20px; z-index: 90; }
 .floating-call a {
   display: flex; width: 60px; height: 60px; border-radius: 50%;
-  background: var(--ink); color: #fff;
+  background: var(--ink); color: var(--surface);
   align-items: center; justify-content: center;
   box-shadow: 0 8px 24px rgba(32, 32, 32, .28);
   transition: background .3s;
